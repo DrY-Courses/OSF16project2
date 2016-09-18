@@ -143,7 +143,7 @@ sub set_align {
 #   ALIGN => 'bochs' (default), 'full', or 'none'
 #   GEOMETRY => {H => heads, S => sectors per track} (default 16, 63)
 #   FORMAT => 'partitioned' (default) or 'raw'
-#   LOADER => $LOADER_SIZE-byte string containing the loader binary
+#   LOADER => $LOADER_SIZE-byte string containing the /pintos/threads/build//pintos/threads/build/loader.binary
 #   ARGS => ['arg 1', 'arg 2', ...]
 sub assemble_disk {
     my (%args) = @_;
@@ -359,8 +359,8 @@ sub cyl_sectors {
 # Makes sure that the loader is a reasonable size.
 sub read_loader {
     my ($name) = @_;
-    ###--- Change the string in quotes below to your location of loader.bin---### 
-    $name = find_file ("/home/ramesh/EE461S/SKKU/pintos/userprog/build/loader.bin") if !defined $name;
+    ###--- Change the string in quotes below to your location of /pintos/threads/build//pintos/threads/build/loader.bin---### 
+    $name = find_file ("/pintos/threads/build/loader.bin") if !defined $name;
     die "Cannot find loader\n" if !defined $name;
 
     my ($handle);
